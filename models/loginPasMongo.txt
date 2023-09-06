@@ -1,0 +1,12 @@
+//https://cloud.mongodb.com/v2/64ed0f3dde3231200513d238#/setup/access?includeToast=true
+
+//Підключення до бази
+
+mongodb+srv://oleksienkosa:nTrzNfzLYtwiQL41@cluster0.hkaprdj.mongodb.net/
+Username - oleksienkosa
+
+2. Autogenerate Secure Password - nTrzNfzLYtwiQL41
+
+
+
+
