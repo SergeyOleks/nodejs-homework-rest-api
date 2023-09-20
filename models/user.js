@@ -22,7 +22,11 @@ const userShema = new Schema(
     },
     token: {
       type: String,
-      default: '',
+      default: "",
+    },
+    avatarURL: {
+      type: String,
+      required: true,
     },
   },
   { versionKey: false, timestamps: true }

@@ -1,11 +1,11 @@
 const { Schema, model } = require("mongoose");
-const { handleMongooseError } = require('../helpers');
+const { handleMongooseError } = require("../helpers");
 const Joi = require("joi");
 const contactSchema = new Schema(
   {
     name: {
       type: String,
-      required: [true, 'Set name for contact'],
+      required: [true, "Set name for contact"],
     },
     email: {
       type: String,
@@ -17,10 +17,13 @@ const contactSchema = new Schema(
       type: Boolean,
       default: false,
     },
-}, {versionKey:false, timestamps:true});
+
+  },
+  { versionKey: false, timestamps: true }
+);
 
 //Добавляем мидделвар, чтобы при ошибке, несоблюдения формата схемы, статус был 400
-contactSchema.post('save', handleMongooseError);
+contactSchema.post("save", handleMongooseError);
 
 const addSchema = Joi.object({
   name: Joi.string().required(),
@@ -33,14 +36,12 @@ const updateFavoriteSchema = Joi.object({
   favorite: Joi.boolean().required(),
 });
 
-
 const schemas = {
   addSchema,
   updateFavoriteSchema,
 };
 
 const Contact = model("contact", contactSchema);
-
 
 module.exports = {
   Contact,
